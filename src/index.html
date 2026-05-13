@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>awaiting.christmas — counting down to Christmas</title>
+    <meta
+      name="description"
+      content="A quiet little countdown, awaiting Christmas."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@300;400&display=swap"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <canvas id="snow" aria-hidden="true"></canvas>
+    <main>
+      <p>awaiting.christmas</p>
+
+      <h1>Almost<br /><em>Christmas.</em></h1>
+
+      <time aria-live="polite" datetime="2026-12-25">
+        <span><b data-unit="d">—</b><i>days</i></span>
+        <span><b data-unit="h">—</b><i>hours</i></span>
+        <span><b data-unit="m">—</b><i>minutes</i></span>
+        <span><b data-unit="s">—</b><i>seconds</i></span>
+      </time>
+
+      <p>December 25 · every year, on time.</p>
+    </main>
+
+    <script src="main.js" defer></script>
+    <script src="snow.js" defer></script>
+  </body>
+</html>
