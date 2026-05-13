@@ -98,7 +98,7 @@ time b {
 time i {
   font-style: normal;
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: clamp(0.6rem, 2.73vw, 0.7rem);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -132,12 +132,6 @@ body.christmas time {
 }
 body.christmas [data-merry] {
   display: inline;
-}
-
-@media (max-width: 22rem) {
-  time i {
-    font-size: 0.6rem;
-  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
