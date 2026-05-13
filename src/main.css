@@ -134,9 +134,53 @@ body.christmas [data-merry] {
   display: inline;
 }
 
+[data-fullscreen] {
+  position: fixed;
+  inset-block-end: clamp(1rem, 3vw, 1.5rem);
+  inset-inline-start: clamp(1rem, 3vw, 1.5rem);
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid color-mix(in oklch, var(--fg) 18%, transparent);
+  border-radius: 0.375rem;
+  background: color-mix(in oklch, var(--bg-2) 70%, transparent);
+  color: var(--muted);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+[data-fullscreen]:hover,
+[data-fullscreen]:focus-visible {
+  color: var(--fg);
+  border-color: color-mix(in oklch, var(--fg) 40%, transparent);
+  background: color-mix(in oklch, var(--bg-2) 90%, transparent);
+  outline: none;
+}
+[data-fullscreen] svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+[data-fullscreen] [data-icon-exit] {
+  display: none;
+}
+body.fullscreen [data-fullscreen] [data-icon-enter] {
+  display: none;
+}
+body.fullscreen [data-fullscreen] [data-icon-exit] {
+  display: block;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   h1 em {
     animation: glow 4s ease-in-out infinite alternate;
+  }
+  [data-fullscreen] {
+    transition:
+      color 0.2s,
+      border-color 0.2s,
+      background 0.2s;
   }
 }
 @keyframes glow {
