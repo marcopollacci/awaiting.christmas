@@ -72,6 +72,7 @@ h1 {
   text-wrap: balance;
 }
 h1 em {
+  display: block;
   font-style: italic;
   color: var(--accent);
 }
@@ -107,6 +108,30 @@ main p:last-of-type {
   font-style: italic;
   color: var(--muted);
   font-size: 1.05rem;
+}
+
+[data-sr-only] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+[data-merry] {
+  display: none;
+}
+
+body.christmas [data-almost],
+body.christmas time {
+  display: none;
+}
+body.christmas [data-merry] {
+  display: inline;
 }
 
 @media (max-width: 22rem) {
