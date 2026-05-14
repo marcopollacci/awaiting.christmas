@@ -40,3 +40,25 @@ const tick = () => {
 
 tick();
 const interval = setInterval(tick, 1000);
+
+// Fullscreen toggle
+const fsBtn = document.querySelector("[data-fullscreen]");
+
+const onFullscreenChange = () => {
+  const isFs = !!document.fullscreenElement;
+  document.body.classList.toggle("fullscreen", isFs);
+  fsBtn.setAttribute(
+    "aria-label",
+    isFs ? "Exit fullscreen" : "Enter fullscreen",
+  );
+};
+
+document.addEventListener("fullscreenchange", onFullscreenChange);
+
+fsBtn.addEventListener("click", () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  } else {
+    document.exitFullscreen().catch(() => {});
+  }
+});
